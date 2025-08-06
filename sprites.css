@@ -1,0 +1,170 @@
+:root {
+    --pixel-size: 2px;
+    --pixel-border: 1px;
+    --pixel-color-1: #000000;
+    --pixel-color-2: #06395e;
+    --pixel-color-3: #7E2553;
+    --pixel-color-4: #008751;
+    --pixel-color-5: #AB5236;
+    --pixel-color-6: #5F574F;
+    --pixel-color-7: #C2C3C7;
+    --pixel-color-8: #FFF1E8;
+    --pixel-color-9: #FF004D;
+    --pixel-color-10: #FFA300;
+    --pixel-color-11: #FFEC27;
+    --pixel-color-12: #00E436;
+    --pixel-color-13: #29ADFF;
+    --pixel-color-14: #83769C;
+    --pixel-color-15: #FF77A8;
+    --pixel-color-16: #FFCCAA;
+}
+
+.pixel-art {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+}
+
+.pixel-border {
+    border: var(--pixel-border) solid var(--pixel-color-1);
+}
+
+/* Estilos para los elementos del mapa */
+.zone {
+    background: var(--pixel-color-2);
+    border: 2px solid var(--pixel-color-1);
+    border-radius: 0;
+    box-shadow: 0 0 0 1px var(--pixel-color-1);
+}
+
+.zone:hover {
+    transform: scale(1.02);
+    border-color: var(--pixel-color-11);
+    box-shadow: 0 0 0 2px var(--pixel-color-11);
+}
+
+.zone-icon {
+    font-size: 2rem;
+    filter: drop-shadow(2px 2px 0 var(--pixel-color-1));
+}
+
+.zone-title {
+    color: var(--pixel-color-11);
+    text-shadow: 1px 1px 0 var(--pixel-color-1);
+}
+
+/* Easter Egg - Modo Pixel Art Extremo */
+.pixel-mode {
+    animation: pixelRainbow 2s infinite;
+}
+
+.pixel-mode .zone {
+    animation: pixelPulse 1s infinite;
+}
+
+.pixel-mode .zone:hover {
+    animation: pixelSparkle 0.5s infinite;
+}
+
+@keyframes pixelRainbow {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes pixelPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+@keyframes pixelSparkle {
+    0%, 100% { box-shadow: 0 0 0 2px var(--pixel-color-11); }
+    50% { box-shadow: 0 0 0 4px var(--pixel-color-11), 0 0 0 8px var(--pixel-color-14); }
+}
+
+
+.zone-description {
+    color: var(--pixel-color-7);
+}
+
+/* Estilo para el avatar */
+.profile-avatar {
+    background: var(--pixel-color-2);
+    border: 2px solid var(--pixel-color-1);
+    border-radius: 0;
+}
+
+/* Efectos de partículas pixeladas */
+.floating-particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: var(--pixel-color-11);
+    border: 1px solid var(--pixel-color-1);
+    border-radius: 0;
+    animation: float 10s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-100vh); }
+}
+
+/* Estilo para los modales */
+.modal-content {
+    background: var(--pixel-color-2);
+    border: 2px solid var(--pixel-color-1);
+    border-radius: 0;
+}
+
+.close-btn {
+    color: var(--pixel-color-11);
+    text-shadow: 1px 1px 0 var(--pixel-color-1);
+}
+
+/* Estilo para los botones */
+.button {
+    background: var(--pixel-color-3);
+    border: 2px solid var(--pixel-color-1);
+    border-radius: 0;
+    padding: 8px 16px;
+    color: var(--pixel-color-11);
+    text-shadow: 1px 1px 0 var(--pixel-color-1);
+    transition: all 0.2s;
+}
+
+.button:hover {
+    background: var(--pixel-color-4);
+    border-color: var(--pixel-color-11);
+    transform: scale(1.02);
+}
+
+/* Estilo para el texto */
+body {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 0.8rem;
+    line-height: 1.4;
+}
+
+h1, h2, h3 {
+    text-shadow: 1px 1px 0 var(--pixel-color-1);
+    color: var(--pixel-color-11);
+}
+
+/* Animación de entrada para los elementos */
+.fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
