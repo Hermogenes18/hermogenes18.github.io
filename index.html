@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Reino de Hermogenes - Portfolio Aventura</title>
+    <link rel="stylesheet" href="sprites.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="floating-particles" id="particles"></div>
+    
+    <div class="map-container">
+        <div class="map-image-container">
+            <img src="mapa rpg.png" alt="Mapa RPG">
+        </div>
+        <!-- Zona Central: El Pueblo del Perfil -->
+        <div class="zone" onclick="openModal('profile')" style="left: 59%; top: 45%; transform: translate(-50%, -50%);">
+            <div class="zone-title">Mi Perfil</div>
+        </div>
+
+        <!-- Zona 1: Torre del Conocimiento -->
+        <div class="zone" onclick="openModal('education')" style="left: 24%; top: 24%; transform: translate(-50%, -50%);">
+            <div class="zone-title">Educación</div>
+        </div>
+
+        <!-- Zona 2: Cueva del Código -->
+        <div class="zone" onclick="openModal('skills')" style="left: 20%; top: 58%; transform: translate(-50%, -50%);">
+            <div class="zone-title">Habilidades</div>
+        </div>
+
+        <!-- Zona 3: Campo de Batalla -->
+        <div class="zone" onclick="openModal('experience')" style="left: 84%; top: 35.5%; transform: translate(-50%, -50%);">
+            <div class="zone-title">Experiencia</div>
+        </div>
+
+        <!-- Zona 4: Puerta de Prototipos -->
+        <div class="zone" onclick="openModal('projects')" style="left: 21%; top: 84%; transform: translate(-50%, -50%);">
+            <div class="zone-title">Proyectos</div>
+        </div>
+
+        <!-- Zona Final: Torre del Hechicero -->
+        <div class="zone" onclick="openModal('contact')" style="left: 86.5%; top: 82%; transform: translate(-50%, -50%);">
+            <div class="zone-title">Contacto</div>
+        </div>
+    </div>
+
+    <!-- Modales para cada zona -->
+    
+    <!-- Modal Perfil -->
+    <div class="modal" id="profileModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('profile')">&times;</span>
+            <h2 class="modal-title">👤 Mi Perfil</h2>
+            
+            <div class="profile-info">
+                <div class="profile-avatar">
+                    <img src="terno.jpeg" alt="Hermogenes Quispe Menor" style="width: 150px; height: 150px; object-fit: cover; border-radius: 50%; border: 4px solid #ffd700; box-shadow: 0 0 20px rgba(255,215,0,0.5);">
+                </div>
+                <div>
+                    <h3 style="color: #ffd700; font-size: 1.8rem;">Hermogenes Quispe Menor</h3>
+                    <p>📍 Arequipa, Perú</p>
+                    <p>📧 hermogenes1175@gmail.com</p>
+                    <p>📱 +51 944094538</p>
+                </div>
+            </div>
+            
+            <div class="dialogue-box">
+                <h4 style="color: #ffd700;">💬 Perfil profesional:</h4>
+                <div class="animated-text" style="margin-top: 10px; line-height: 1.6;">
+                    <!-- El texto se añadirá dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Educación -->
+    <div class="modal" id="educationModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('education')">&times;</span>
+            <h2 class="modal-title">📚 Educación</h2>
+            
+            <div class="education-hero" style="text-align: center; margin-bottom: 30px;">
+                <div class="education-badge" style="display: inline-block;">
+                    <img src="Escudo_UNSA.png" alt="Universidad Nacional de San Agustín" style="width: 180px; height: 180px; margin: 20px 0; border: 3px solid #ffd700; box-shadow: 0 0 25px rgba(255,215,0,0.6);">
+                    <div class="education-badge-content">
+                        <div class="education-title" style="font-size: 1.2rem;">🎓 Ciencia de la Computación</div>
+                        <div class="education-period" style="font-size: 1rem; color: #ffd700; margin: 10px 0;">2017 - 2022</div>
+                        <div class="education-institution" style="font-size: 1rem; color: #ffd700; opacity: 0.9;">Universidad Nacional de San Agustín</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-details" style="background: rgba(0,0,0,0.3); padding: 25px; border-radius: 10px; border: 1px solid rgba(255,215,0,0.2); margin-bottom: 30px;">
+                <h3 style="color: #ffd700; margin-bottom: 15px;">📜 Resumen Académico</h3>
+                <div class="education-description" style="font-size: 0.95rem; line-height: 1.6; color: var(--pixel-color-7); opacity: 0.9;">
+                    Soy bachiller de la carrera profesional de Ciencia de la Computación. Durante mis estudios, adquirí una sólida base en programación y desarrollo de software. Me enfoqué en el aprendizaje de diversos lenguajes de programación y herramientas que son fundamentales en el campo de la tecnología. También participé en proyectos académicos que me permitieron aplicar los conocimientos teóricos en situaciones prácticas, desarrollando mis habilidades de resolución de problemas y trabajo en equipo.
+                </div>
+            </div>
+
+            <div class="certifications-section" style="background: rgba(0,0,0,0.3); padding: 25px; border-radius: 10px; border: 1px solid rgba(255,215,0,0.2);">
+                <h3 style="color: #ffd700; margin-bottom: 20px; font-size: 1.2rem;">⭐ Certificaciones Profesionales</h3>
+                <div class="certification-grid">
+                    <div class="certification-item">
+                        <div class="certification-icon">⭐</div>
+                        <div class="certification-info">
+                            <h4 style="margin: 5px 0;">AWS Educate - AWS Academy Cloud Architecting</h4>
+                            <p style="color: #ffd700; margin: 5px 0; font-size: 0.9rem;">Certificado digital</p>
+                            <a href="https://www.credly.com/badges/e3b838b6-8861-42fe-8a06-c1ed51adfff4/public_url" target="_blank" style="color: #ffd700; text-decoration: none; font-size: 0.85rem; display: inline-flex; align-items: center;">
+                                🔗 Ver certificado en Credly
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Skills -->
+    <div class="modal" id="skillsModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('skills')">&times;</span>
+            <h2 class="modal-title">⚔️ Habilidades</h2>
+            
+            <div class="skills-intro" style="text-align: center; margin-bottom: 30px;">
+                <div class="scrolling-text" style="display: inline-block; position: relative;">
+                    <div class="scrolling-text-content" style="animation: scrollText 10s linear infinite;">
+                        📜 Aquí reposan las piedras mágicas que contienen mis habilidades tecnológicas... 📜
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills-container" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 20px;">
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <h3 style="color: #ffd700; margin: 0;">💻 Lenguajes de Programación</h3>
+                        <div class="skill-card-decoration" style="background: linear-gradient(45deg, #ffd700, #ff4500); height: 2px; margin: 10px 0;"></div>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item">• C#</div>
+                        <div class="skill-item">• JavaScript</div>
+                        <div class="skill-item">• TypeScript</div>
+                        <div class="skill-item">• SQL</div>
+                        <div class="skill-item">• Python</div>
+                        <div class="skill-item">• Dart</div>
+                        <div class="skill-item">• Kotlin</div>
+                        <div class="skill-item">• HTML</div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <h3 style="color: #ffd700; margin: 0;">🛠️ Frameworks & Librerías</h3>
+                        <div class="skill-card-decoration" style="background: linear-gradient(45deg, #ffd700, #ff4500); height: 2px; margin: 10px 0;"></div>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item">• .NET Core</div>
+                        <div class="skill-item">• .NET Framework</div>
+                        <div class="skill-item">• Angular</div>
+                        <div class="skill-item">• Flutter</div>
+                        <div class="skill-item">• React</div>
+                        <div class="skill-item">• Cypress</div>
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-card-header">
+                        <h3 style="color: #ffd700; margin: 0;">🛠️ Software & Herramientas</h3>
+                        <div class="skill-card-decoration" style="background: linear-gradient(45deg, #ffd700, #ff4500); height: 2px; margin: 10px 0;"></div>
+                    </div>
+                    <div class="skill-list">
+                        <div class="skill-item">• GitHub</div>
+                        <div class="skill-item">• Android Studio</div>
+                        <div class="skill-item">• CLI</div>
+                        <div class="skill-item">• Docker</div>
+                        <div class="skill-item">• AWS (Amazon Web Services)</div>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                @keyframes scrollText {
+                    0% { transform: translateX(0); }
+                    100% { transform: translateX(-100%); }
+                }
+                .scrolling-text-content {
+                    white-space: nowrap;
+                    position: absolute;
+                    overflow: hidden;
+                    width: 200%;
+                    animation: scrollText 10s linear infinite;
+                }
+                .skill-card {
+                    background: rgba(0, 0, 0, 0.8);
+                    border: 2px solid #ffd700;
+                    border-radius: 10px;
+                    padding: 15px;
+                    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+                    transition: transform 0.3s ease;
+                }
+                .skill-card:hover {
+                    transform: translateY(-5px);
+                }
+                .skill-card-header {
+                    text-align: center;
+                    margin-bottom: 15px;
+                }
+                .skill-item {
+                    padding: 5px 0;
+                    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+                    transition: color 0.3s ease;
+                }
+                .skill-item:hover {
+                    color: #ffd700;
+                }
+            </style>
+        </div>
+    </div>
+
+    <!-- Modal Experiencia -->
+    <div class="modal" id="experienceModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('experience')">&times;</span>
+            <h2 class="modal-title">🏆 Experiencia Profesional</h2>
+            
+            <div class="experience-item">
+                <div class="experience-title">🏆 DESARROLLADOR RPA</div>
+                <div class="experience-period">Noviembre 2024 - Abril 2025</div>
+                <div class="experience-company">NTT DATA PERU S.A.C</div>
+                <ul class="experience-details">
+                    <li>Desarrollo de soluciones RPA con Python para la optimización de procesos.</li>
+                    <li>Implementación de RDA con Python para la automatización en entornos locales.</li>
+                    <li>Análisis de procesos empresariales para diseñar bots eficientes.</li>
+                    <li>Documentación de procesos y generación de reportes de mejoras obtenidas.</li>
+                    <li>Garantía de eficiencia y escalabilidad en las soluciones implementadas.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">🏆 DESARROLLADOR FULLSTACK (FREELANCE)</div>
+                <div class="experience-period">Septiembre 2024 - Octubre 2024</div>
+                <div class="experience-company">I + D CONSULTORES S.A.C</div>
+                <ul class="experience-details">
+                    <li>Implementación de microservicios en .NET Core para soluciones escalables.</li>
+                    <li>Integración con bases de datos Oracle utilizando ORMs.</li>
+                    <li>Desarrollo de interfaces con Angular.</li>
+                    <li>Consumo y exposición de APIs RESTful.</li>
+                    <li>Garantía de eficiencia y escalabilidad en las soluciones implementadas.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">🏆 DESARROLLADOR WEB .NET</div>
+                <div class="experience-period">Marzo 2024 - Julio 2024</div>
+                <div class="experience-company">WEB CONTROL SYSTEMS PERU S.A.C.</div>
+                <ul class="experience-details">
+                    <li>Desarrollo y mantenimiento de aplicaciones con .NET Framework.</li>
+                    <li>Creación de interfaces dinámicas con Razor Pages y ASP.NET WebForms.</li>
+                    <li>Uso de bases de datos en SQL Server.</li>
+                    <li>Interacción con clientes para entender requerimientos y proponer soluciones técnicas.</li>
+                    <li>Resolución de incidencias y mejoras en sistemas existentes para garantizar estabilidad y rendimiento.</li>
+                    <li>Uso de Git para control de versiones y gestión del código.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">🏆 DESARROLLADOR FULLSTACK</div>
+                <div class="experience-period">Mayo 2023 - Febrero 2024</div>
+                <div class="experience-company">SMART REASONS S.R.L</div>
+                <ul class="experience-details">
+                    <li>Desarrollo fullstack con Angular en frontend y .NET Core en backend.</li>
+                    <li>Creación de APIs RESTful en .NET para integración entre sistemas.</li>
+                    <li>Gestión y optimización de bases de datos en SQL Server.</li>
+                    <li>Soporte a aplicaciones móviles en Kotlin para Android.</li>
+                    <li>Automatización de pruebas de software para mejorar estabilidad.</li>
+                    <li>Uso de GitLab para control de versiones y trabajo colaborativo.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="experience-title">🏆 PRACTICANTE DESARROLLADOR FLUTTER</div>
+                <div class="experience-period">Noviembre 2022 - Marzo 2023</div>
+                <div class="experience-company">TELCONET S.A.C</div>
+                <ul class="experience-details">
+                    <li>Desarrollo de aplicaciones móviles Android con Flutter.</li>
+                    <li>Integración de Firebase para autenticación, almacenamiento en tiempo real y notificaciones push.</li>
+                    <li>Implementación de Google Maps API para funcionalidades de geolocalización.</li>
+                    <li>Consumo de API REST para la integración entre frontend y backend.</li>
+                    <li>Uso de GitHub para control de versiones.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Proyectos -->
+    <div class="modal" id="projectsModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('projects')">&times;</span>
+            <h2 class="modal-title">🔮 Puerta de Prototipos</h2>
+            
+            <div style="text-align: center; margin-bottom: 30px;">
+                <div style="font-size: 4rem; margin-bottom: 15px;">🗝️</div>
+                <p style="font-size: 1.2rem; color: #ffd700;">Reliquias Tecnológicas</p>
+                <p style="opacity: 0.8; margin-top: 10px;">
+                    Esta cámara secreta alberga demos y prototipos que demuestran el poder de la tecnología...
+                </p>
+            </div>
+
+            <div class="skill-grid">
+                <div class="skill-category" style="text-align: center;">
+                    <h4>🤖 Bot de Automatización</h4>
+                    <p style="margin-top: 10px; opacity: 0.8;">
+                        Bot inteligente para automatización de procesos repetitivos con Python
+                    </p>
+                    <button class="btn-magic" style="margin-top: 15px;" onclick="alert('Demo disponible en GitHub!')">
+                        Ver Demo
+                    </button>
+                </div>
+
+                <div class="skill-category" style="text-align: center;">
+                    <h4>🌐 API RESTful</h4>
+                    <p style="margin-top: 10px; opacity: 0.8;">
+                        API robusta desarrollada con .NET Core y documentada con Swagger
+                    </p>
+                    <button class="btn-magic" style="margin-top: 15px;" onclick="alert('Documentación disponible!')">
+                        Ver API
+                    </button>
+                </div>
+
+                <div class="skill-category" style="text-align: center;">
+                    <h4>📱 App Dashboard</h4>
+                    <p style="margin-top: 10px; opacity: 0.8;">
+                        Dashboard interactivo desarrollado con Angular y gráficos dinámicos
+                    </p>
+                    <button class="btn-magic" style="margin-top: 15px;" onclick="alert('Demo en vivo disponible!')">
+                        Ver Demo
+                    </button>
+                </div>
+
+                <div class="skill-category" style="text-align: center;">
+                    <h4>🔗 GitHub Portfolio</h4>
+                    <p style="margin-top: 10px; opacity: 0.8;">
+                        Repositorio completo con todos mis proyectos y contribuciones
+                    </p>
+                    <button class="btn-magic" style="margin-top: 15px;" onclick="window.open('https://github.com/', '_blank')">
+                        Ver GitHub
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Contacto -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('contact')">&times;</span>
+            <h2 class="modal-title">🧙‍♂️ Contacto</h2>
+            
+            <div class="contact-section">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <div class="contact-info">
+                        <h4>Ubicación</h4>
+                        <p>Arequipa/Perú</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <div class="contact-info">
+                        <h4>Teléfono</h4>
+                        <p>+51 944094538</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <div class="contact-info">
+                        <h4>Email</h4>
+                        <p>hermogenes1175@gmail.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">💼</div>
+                    <div class="contact-info">
+                        <h4>LinkedIn</h4>
+                        <a href="https://www.linkedin.com/in/hermogenesqm/" target="_blank">hermogenesqm</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <div class="contact-icon">💻</div>
+                    <div class="contact-info">
+                        <h4>GitHub</h4>
+                        <a href="https://github.com/Hermogenes18" target="_blank">Hermogenes18</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-footer" style="text-align: center; margin-top: 20px; padding: 15px; border-top: 1px solid rgba(255,215,0,0.2);">
+                <p style="color: #ffd700; opacity: 0.9;">¡No dudes en contactarme para cualquier consulta o colaboración!</p>
+                <p style="color: var(--pixel-color-7); opacity: 0.8;">Estoy abierto a nuevas oportunidades y proyectos interesantes.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
